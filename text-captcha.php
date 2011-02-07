@@ -3,7 +3,7 @@
 Plugin Name: Text Captcha
 Plugin URI: http://www.troyvit.com
 Description: Text Captcha uses riddles and math to make sure your posters are real instead of computers.
-Version: 0.1b
+Version: 0.9
 Author: Troy Vitullo
 Author URI: http://www.troyvit.com
 License: GPLv2
