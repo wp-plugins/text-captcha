@@ -35,6 +35,8 @@ It uses WP's included jQuery in the admin section and plain old javaScript to po
 * Gather feedback.
 * Bulletproof the PHP.
 * Bulletproof the JavaScript.
+* Add config options for challenge header, error message
+* Make the error message more graceful
 
 == Changelog ==
 
