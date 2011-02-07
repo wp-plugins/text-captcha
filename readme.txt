@@ -3,6 +3,7 @@ Contributors: troyvit
 Tags: comments, captcha, blind
 Requires at least: 3.0
 Tested up to: 3.1-RC3
+Stable tag: trunk
 
 Text Captcha uses riddles and math to make sure your posters are real instead of computers.
 
