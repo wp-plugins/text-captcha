@@ -176,7 +176,8 @@ class text_captcha {
             <?php } ?>
 
             var text_captcha_form=document.getElementById('text_captcha');
-            var p2 = document.getElementsByClassName('form-submit')[0];
+            // var p2 = document.getElementsByClassName('form-submit')[0];
+            var p2 = document.getElementById('submit');
             p2.parentNode.insertBefore(text_captcha_form,p2);
             </script>
 
