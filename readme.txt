@@ -2,8 +2,8 @@
 Contributors: troyvit
 Tags: comments, captcha, blind
 Requires at least: 3.0
-Tested up to: 3.1-RC3
-Stable tag: 0.9
+Tested up to: 3.1
+Stable tag: 0.9.2
 
 Text Captcha uses riddles and math to make sure your posters are real instead of computers.
 
@@ -22,7 +22,7 @@ It doesn't take much to prove that computers are idiots, but most captchas go to
 
 = Do I have to change my templates?
 
-No. It uses add_filter on the comments to automagically test the captcha.
+Maybe. It uses add_filter on the comments to automagically test the captcha but it requires that your comment submit button be have the default #submit id.
 
 = Does it rely on JavaScript? Sessions?
 
@@ -30,16 +30,24 @@ It uses WP's included jQuery in the admin section and plain old javaScript to po
 
 = What do you have left to do?
 
-* Add some css to make it prettier.
+* Add some css to make admin prettier.
 * Test on multiple versions of Wordpress.
 * Gather feedback.
 * Bulletproof the PHP.
 * Bulletproof the JavaScript.
-* Add config options for challenge header, error message
-* Make the error message more graceful
+* Bulletproof the Ajax.
+* Add config options for challenge header, error message.
+* Make the error message more graceful.
+* Consider storing captcha answers in the db instead of a session.
 
 == Changelog ==
 
-= 0.5 =
+= 0.9 =
 * Initial import. 
 * multiplication, addition and riddle modules.
+
+= 0.9.1 =
+* Hack to make it work in explorer.
+
+= 0.9.2 =
+* Added a rudimentary ajax hook so you can make it work with plugins like http://wordpress.org/extend/plugins/comment-validation/
