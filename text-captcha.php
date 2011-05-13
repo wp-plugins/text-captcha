@@ -179,9 +179,9 @@ class text_captcha {
 
 ?>
             <div id="text_captcha">
-                <h4>Before you post, please prove you are sentient.</h4> 
+                <h4 id="text_captcha_notice">Before you post, please prove you are sentient.</h4> 
                 <h4 id="text_captcha_error" style="display:none;">Wait! The answer you gave wasn't the one we were looking for. Try another.</h4>
-                <p><?php echo $question; ?> <input id="text_captcha_answer" type="text" name="text_captcha_answer"></p>
+                <p id="text_captcha_question"><?php echo $question; ?> <input id="text_captcha_answer" type="text" name="text_captcha_answer"></p>
             </div>
             <script type="text/javascript">
             <?php 

@@ -3,7 +3,7 @@ Contributors: troyvit
 Tags: comments, captcha, blind
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 
 Text Captcha uses riddles and math to make sure your posters are real instead of computers.
 
@@ -51,3 +51,6 @@ It uses WP's included jQuery in the admin section and plain old javaScript to po
 
 = 0.9.2 =
 * Added a rudimentary ajax hook so you can make it work with plugins like http://wordpress.org/extend/plugins/comment-validation/
+
+= 0.9.3 =
+* Added ids to some of the form elements for easier styling
