@@ -32,11 +32,31 @@ class text_captcha {
         add_action('admin_head', array('text_captcha', 'text_captcha_settings_toggle'));
         add_filter('preprocess_comment', array('text_captcha', 'text_captcha_verify'), 1);
         add_action( 'init', 'session_start' );
+        add_action('wp_ajax_nopriv_text_captcha_validate', array("text_captcha", "text_captcha_validate"));
 	}
 
 	# ----------------------------------------------------------------
 	# Admin area
 	# ----------------------------------------------------------------
+
+    function text_captcha_validate() {
+        global $textCaptcha;
+		global $user_ID;
+		if( $user_ID ) {
+            return $id;
+        }
+		session_start();
+		$test_captcha_answer = $_GET['text_captcha_answer'];
+		$answer = $_SESSION['answer'];
+		// Check if the input matches the answer
+		if( $textCaptcha->validate_answer($test_captcha_answer, $answer) ) {
+			echo "true";
+		} else {
+            echo "false";
+        }
+        die();
+        
+    }
 
     function text_captcha_settings_toggle() { ?>
         <script type="text/javascript">
@@ -159,9 +179,9 @@ class text_captcha {
 
 ?>
             <div id="text_captcha">
-                <h4>Before you post, please prove you are sentient.</h4> 
+                <h4 id="text_captcha_notice">Before you post, please prove you are sentient.</h4> 
                 <h4 id="text_captcha_error" style="display:none;">Wait! The answer you gave wasn't the one we were looking for. Try another.</h4>
-                <p><?php echo $question; ?> <input id="text_captcha_answer" type="text" name="text_captcha_answer"></p>
+                <p id="text_captcha_question"><?php echo $question; ?> <input id="text_captcha_answer" type="text" name="text_captcha_answer"></p>
             </div>
             <script type="text/javascript">
             <?php 
@@ -176,7 +196,8 @@ class text_captcha {
             <?php } ?>
 
             var text_captcha_form=document.getElementById('text_captcha');
-            var p2 = document.getElementsByClassName('form-submit')[0];
+            // var p2 = document.getElementsByClassName('form-submit')[0];
+            var p2 = document.getElementById('submit');
             p2.parentNode.insertBefore(text_captcha_form,p2);
             </script>
 
